@@ -14,3 +14,6 @@ export const putUpdateProductApi
 
 export const deleteProductApi
   = (id: any) => apiClient.delete(`/api/delete/DeleteProduct/${id}`);
+
+export const checkIfProductExistApi
+  = (id: number) => apiClient.get(`/api/get/CheckExistence/${id}`);

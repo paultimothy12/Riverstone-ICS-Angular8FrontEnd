@@ -2,6 +2,7 @@
   <div class="bg-white border rounded-5">
     <section class="w-100 p-4 d-flex justify-content-center pb-4">
       <form>
+        <div *ngIf="message" class="alert alert-warning text-center">{{ message }}</div>
         <div class="form-outline mb-4">
           <label class="form-label">Enter Product ID</label>
           <input type="number" name="id" [(ngModel)]="id" autoComplete="off" class="form-control"/>
