@@ -1,5 +1,6 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
+
 import {LoginComponent} from './login/login.component';
 import {WelcomeComponent} from './welcome/welcome.component';
 import {ErrorComponent} from './error/error.component';
@@ -16,7 +17,7 @@ const routes: Routes = [
   {path: 'products', component: ProductListComponent, canActivate: [AuthGuardService]},
   {path: 'product/:id', component: ProductComponent, canActivate: [AuthGuardService]},
   {path: 'specific', component: SpecificComponent, canActivate: [AuthGuardService]},
-  {path: 'specificproddetail/:id', component: ProductDetailComponent, canActivate: [AuthGuardService]},
+  {path: 'specific-prod-detail/:id', component: ProductDetailComponent, canActivate: [AuthGuardService]},
   {path: '**', component: ErrorComponent, canActivate: [AuthGuardService]}
 ];
 

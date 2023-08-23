@@ -18,6 +18,7 @@ export class ProductListComponent implements OnInit {
   ngOnInit(): void {
     this.refreshProducts();
   }
+
   refreshProducts(): void {
     getAllProductApi().then(
       (response: any) => {

@@ -4,7 +4,7 @@
       <form>
         <div *ngIf="showErrorMessage" class="errorMessage">Authentication Failed.</div>
         <div class="form-outline mb-4">
-          <label class="form-label" >Username</label>
+          <label class="form-label">Username</label>
           <input type="text" name="username" [(ngModel)]="username" autoComplete="off" class="form-control"/>
         </div>
 
@@ -12,7 +12,8 @@
           <label class="form-label">Password</label>
           <input type="password" name="password" [(ngModel)]="password" autoComplete="off" class="form-control"/>
         </div>
-        <button type="button" name="login" (click)="handleSubmit()" class="btn btn-primary btn-block mb-4">Log in</button>
+        <button type="button" name="login" (click)="handleSubmit()" class="btn btn-primary btn-block mb-4">Log in
+        </button>
       </form>
     </section>
   </div>

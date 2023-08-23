@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import {Component} from '@angular/core';
+import {Router} from '@angular/router';
 import {AuthService} from '../security/auth-context';
 
 @Component({
@@ -11,7 +11,10 @@ export class LoginComponent {
   username = '';
   password = '';
   showErrorMessage = false;
-  constructor(private authService: AuthService, private router: Router) {}
+
+  constructor(private authService: AuthService, private router: Router) {
+  }
+
   async handleSubmit() {
     if (await this.authService.login(this.username, this.password)) {
       this.router.navigateByUrl('/welcome');

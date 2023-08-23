@@ -15,6 +15,6 @@ export class SpecificComponent {
     if (this.id === undefined) {
       return;
     }
-    this.router.navigate([`/specificproddetail/${this.id}`]);
+    this.router.navigate([`/specific-prod-detail/${this.id}`]);
   }
 }

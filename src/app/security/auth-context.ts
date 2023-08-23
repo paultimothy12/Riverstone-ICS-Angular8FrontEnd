@@ -1,4 +1,4 @@
-import {Injectable, Input} from '@angular/core';
+import {Injectable} from '@angular/core';
 import {apiClient} from '../api/api-client';
 import {executeJwtAuthenticationService} from '../api/authentication-service';
 // @ts-ignore
