@@ -50,7 +50,6 @@ export class ProductComponent implements OnInit {
             this.productForm.patchValue(data);
           }, error => {
             this.message = error.response.data.message;
-            console.error('Error fetching specific product data:', error);
           });
       }
     });
@@ -59,25 +58,20 @@ export class ProductComponent implements OnInit {
   onSubmit(): void {
     if (this.productForm.valid) {
       const product = this.productForm.value;
-
       if (this.productId === -1) {
         postNewProductApi(product)
           .then(response => {
-            console.log(response.data);
             this.router.navigate(['/products']);
           }, error => {
             this.message = error.response.data.message;
-            console.error(error.response.data.message);
           });
         // tslint:disable-next-line:triple-equals
       } else if (this.productId == product.productId) {
         putUpdateProductApi(product)
           .then(response => {
-            console.log(response.data);
             this.router.navigate(['/products']);
           }, error => {
             this.message = error.response.data.message;
-            console.error(error);
           });
       } else {
         this.message = 'You are trying to modify another product or a product with the same ID doesn\'t exist';

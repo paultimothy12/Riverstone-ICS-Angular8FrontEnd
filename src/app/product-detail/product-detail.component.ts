@@ -21,23 +21,23 @@ export class ProductDetailComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private router: Router
-  ) { }
+  ) {
+  }
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
       this.id = +params.id;
       getSpecificProductApi(this.id).then(response => {
-            const data = response.data;
-            this.productId = data.productId;
-            this.productName = data.productName;
-            this.manDate = data.manDate;
-            this.expDate = data.expDate;
-            this.price = data.price;
-            this.quantity = data.quantity;
-          }, error => {
-            this.message = error.response.data.message;
-            console.error('Error fetching specific product data:', error);
-          });
+        const data = response.data;
+        this.productId = data.productId;
+        this.productName = data.productName;
+        this.manDate = data.manDate;
+        this.expDate = data.expDate;
+        this.price = data.price;
+        this.quantity = data.quantity;
+      }, error => {
+        this.message = error.response.data.message;
+      });
 
     });
   }
@@ -46,7 +46,6 @@ export class ProductDetailComponent implements OnInit {
     deleteProductApi(id)
       .then(
         () => {
-          console.log('Product deleted');
           this.router.navigate(['/specific']);
         },
         (error: any) => console.error(error)

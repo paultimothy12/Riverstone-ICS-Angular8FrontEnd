@@ -12,6 +12,9 @@ export class SpecificComponent {
   constructor(private router: Router) { }
 
   handleSubmit() {
+    if (this.id === undefined) {
+      return;
+    }
     this.router.navigate([`/specificproddetail/${this.id}`]);
   }
 }
