@@ -15,7 +15,6 @@ export class LoginComponent {
   async handleSubmit() {
     if (await this.authService.login(this.username, this.password)) {
       this.router.navigateByUrl('/welcome');
-      console.log(this.authService.isAuthenticated);
     } else {
       this.showErrorMessage = true;
       console.log(this.authService.isAuthenticated);

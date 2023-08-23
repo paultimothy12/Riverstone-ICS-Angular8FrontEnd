@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+import {AuthService} from '../security/auth-context';
 
 @Component({
   selector: 'app-welcome',
@@ -6,5 +7,9 @@ import {Component} from '@angular/core';
   styleUrls: ['./welcome.component.css']
 })
 export class WelcomeComponent {
-  name = 'Paul';
+  name = '';
+
+  constructor(public authService: AuthService) {
+    this.name = this.authService.userName;
+  }
 }
