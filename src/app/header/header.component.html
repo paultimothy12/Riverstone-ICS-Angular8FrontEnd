@@ -1,0 +1,12 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div><a class="navbar-brand" routerLink="/welcome"><img src="assets/logo.jpg" width="100" alt="logo"></a></div>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active" routerLink="/welcome" *ngIf="authService.authenticator()">Home</a>
+      <a class="nav-item nav-link" routerLink="/products" *ngIf="authService.authenticator()">Products</a>
+      <a class="nav-item nav-link" routerLink="/specific" *ngIf="authService.authenticator()">Search</a>
+      <a class="nav-item nav-link" routerLink="/login" *ngIf="!authService.authenticator()">Login</a>
+      <button (click)="logout()" *ngIf="authService.authenticator()">Logout</button>
+    </div>
+  </div>
+</nav>
