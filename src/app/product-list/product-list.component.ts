@@ -11,6 +11,7 @@ import {Router} from '@angular/router';
 
 export class ProductListComponent implements OnInit {
   products: Product[] = [];
+  message: string | null = null;
 
   constructor(private router: Router) {
   }
@@ -23,6 +24,9 @@ export class ProductListComponent implements OnInit {
     getAllProductApi().then(
       (response: any) => {
         this.products = response.data;
+        if(this.products.length === 0){
+          this.message = 'Please Add Some Products!!';
+        }
       },
       (error) => {
         console.error(error);

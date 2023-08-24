@@ -1,5 +1,6 @@
 <div class="container">
   <div style="display: flex; justify-content: center; align-items: center;"><h1>Stocks</h1></div>
+  <div *ngIf="message" class="alert alert-warning text-center">{{ message }}</div>
   <div style="display: flex; justify-content: center; align-items: center;">
     <table class="table">
       <thead>
