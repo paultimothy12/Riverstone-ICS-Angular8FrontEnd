@@ -24,12 +24,12 @@ export class ProductComponent implements OnInit {
     private formBuilder: FormBuilder
   ) {
     this.productForm = this.formBuilder.group({
-      productId: ['', Validators.required],
-      productName: ['', Validators.required],
-      manDate: ['', Validators.required],
-      expDate: ['', Validators.required],
-      price: ['', Validators.required],
-      quantity: ['', Validators.required]
+      productId: [''],
+      productName: [''],
+      manDate: [''],
+      expDate: [''],
+      price: [''],
+      quantity: ['']
     });
   }
 
@@ -56,7 +56,6 @@ export class ProductComponent implements OnInit {
   }
 
   onSubmit(): void {
-    if (this.productForm.valid) {
       const product = this.productForm.value;
       if (this.productId === -1) {
         postNewProductApi(product)
@@ -77,5 +76,4 @@ export class ProductComponent implements OnInit {
         this.message = 'You are trying to modify another product or a product with the same ID doesn\'t exist';
       }
     }
-  }
 }
