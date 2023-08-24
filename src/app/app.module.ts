@@ -14,6 +14,7 @@ import {ProductDetailComponent} from './product-detail/product-detail.component'
 import {AppRoutingModule} from './app-routing.module';
 import {AuthService} from './security/auth-context';
 import {AuthGuardService} from './auth-guard';
+import { LogoutComponent } from './logout/logout.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import {AuthGuardService} from './auth-guard';
     SpecificComponent,
     ProductComponent,
     ProductListComponent,
-    ProductDetailComponent
+    ProductDetailComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,

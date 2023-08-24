@@ -2,7 +2,6 @@ import {Component} from '@angular/core';
 import {Router} from '@angular/router';
 import {checkIfProductExistApi} from '../api/product-service';
 
-
 @Component({
   selector: 'app-specific',
   templateUrl: './specific.component.html',

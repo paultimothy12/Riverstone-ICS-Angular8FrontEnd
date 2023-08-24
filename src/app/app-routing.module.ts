@@ -9,6 +9,7 @@ import {ProductComponent} from './product/product.component';
 import {SpecificComponent} from './specific/specific.component';
 import {ProductDetailComponent} from './product-detail/product-detail.component';
 import {AuthGuardService} from './auth-guard';
+import {LogoutComponent} from "./logout/logout.component";
 
 const routes: Routes = [
   {path: '', redirectTo: '/login', pathMatch: 'full'},
@@ -18,6 +19,7 @@ const routes: Routes = [
   {path: 'product/:id', component: ProductComponent, canActivate: [AuthGuardService]},
   {path: 'specific', component: SpecificComponent, canActivate: [AuthGuardService]},
   {path: 'specific-prod-detail/:id', component: ProductDetailComponent, canActivate: [AuthGuardService]},
+  {path: 'logout', component: LogoutComponent},
   {path: '**', component: ErrorComponent, canActivate: [AuthGuardService]}
 ];
 
